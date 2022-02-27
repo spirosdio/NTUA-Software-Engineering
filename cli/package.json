@@ -1,0 +1,20 @@
+{
+  "name": "se2101",
+  "version": "1.0.0",
+  "description": "se2101 cli",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chris-marres",
+  "license": "ISC",
+  "bin": {
+    "se2101": "./cli.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "commander": "^9.0.0",
+    "form-data": "^4.0.0",
+    "query-selector": "^2.0.0"
+  }
+}

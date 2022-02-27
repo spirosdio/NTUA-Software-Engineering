@@ -1,0 +1,203 @@
+{
+    "info": {
+        "_postman_id": "b67f5338-290e-4a76-bb52-d9bbe7165c4a",
+        "name": "tolls collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "PassesPerStation",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "2dbb697a-579a-4da7-9635-b3b009a558bf",
+                        "type": "text/javascript",
+                        "exec": [
+                            ""
+                        ]
+                    }
+                }
+            ],
+            "id": "da9a4d0c-8d9a-4d5f-82bf-37cabbb440dc",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BaseURL}}/PassesPerStation/AO10/20201001/20201031",
+                    "host": [
+                        "{{BaseURL}}"
+                    ],
+                    "path": [
+                        "PassesPerStation",
+                        "AO10",
+                        "20201001",
+                        "20201031"
+                    ]
+                },
+                "description": "Επιστρέφεται λίστα με την ανάλυση των διελεύσεων (Passes) για τον σταθμό διοδίων και για την  \nπερίοδο που δίνονται στο URL. Η παράσταση ημερομηνιών που επιστρέφονται πρέπει να είναι της  \nμορφής \"YYYY-MM-DD HH:MM:SS\""
+            },
+            "response": []
+        },
+        {
+            "name": "ChargesBy",
+            "id": "122e9dc6-91b8-4d51-b853-d41a8aa49363",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BaseURL}}/ChargesBy/GF/{{startdate1}}/{{enddate}}",
+                    "host": [
+                        "{{BaseURL}}"
+                    ],
+                    "path": [
+                        "ChargesBy",
+                        "GF",
+                        "{{startdate1}}",
+                        "{{enddate}}"
+                    ]
+                },
+                "description": "Επιστρέφεται ο αριθμός των γεγονότων διέλευσης που πραγματοποιήθηκαν σε σταθμούς του op_ID,  \nαπό οχήματα όλων των άλλων operators, καθώς και το κόστος τους, δηλαδή το ποσό που καθένας  \nαπό τους λοιπούς operators οφείλει στον Operator op_ID, για τη δοσμένη περίοδο."
+            },
+            "response": []
+        },
+        {
+            "name": "PassesCost",
+            "id": "987ef575-d64d-4970-a5f9-9fef2de1b10a",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "{{BaseURL}}/PassesCost/AO/EG/{{startdate1}}/{{enddate}}",
+                    "host": [
+                        "{{BaseURL}}"
+                    ],
+                    "path": [
+                        "PassesCost",
+                        "AO",
+                        "EG",
+                        "{{startdate1}}",
+                        "{{enddate}}"
+                    ]
+                },
+                "description": "Επιστρέφεται ο αριθμός των γεγονότων διέλευσης που πραγματοποιήθηκαν με tag του op2_ID σε  \nσταθμούς του op1_ID, καθώς και το κόστος τους, δηλαδή το ποσό που ο op2_ID οφείλει στον op1_ID,  \nγια τη δοσμένη περίοδο."
+            },
+            "response": []
+        },
+        {
+            "name": "PassesAnalysis",
+            "id": "a1bb5edc-75c2-4f40-9803-5d542432fe86",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BaseURL}}/PassesAnalysis/AO/GF/{{startdate1}}/{{enddate}}",
+                    "host": [
+                        "{{BaseURL}}"
+                    ],
+                    "path": [
+                        "PassesAnalysis",
+                        "AO",
+                        "GF",
+                        "{{startdate1}}",
+                        "{{enddate}}"
+                    ]
+                },
+                "description": "Επιστρέφεται λίστα με την ανάλυση ανά σημείο των γεγονότων διέλευσης που πραγματοποιήθηκαν  \nμε tag του op2_ID σε σταθμούς του op1_ID. Ολα τα γεγονότα που επιστρέφονται είναι τύπου \"visitor\"  \nστην κλήση PassesPerStation. Η παράσταση ημερομηνιών που επιστρέφονται πρέπει να είναι της  \nμορφής \"YYYY-MM-DD HH:MM:SS\""
+            },
+            "response": []
+        },
+        {
+            "name": "PassesAnalysisAndChargesBy",
+            "id": "fed3ec6d-5dd3-409a-b2b1-1df75b5f8f4f",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BaseURL}}/PassesAnalysisAndChargesBy/GF/OO/{{startdate1}}/{{enddate}}",
+                    "host": [
+                        "{{BaseURL}}"
+                    ],
+                    "path": [
+                        "PassesAnalysisAndChargesBy",
+                        "GF",
+                        "OO",
+                        "{{startdate1}}",
+                        "{{enddate}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "PassesPerStation",
+            "id": "dce18790-2c8d-4d14-b77d-9eea7aa482d1",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BaseURL}}/PassesPerStation/AO10/{{startdate1}}/{{enddate}}",
+                    "host": [
+                        "{{BaseURL}}"
+                    ],
+                    "path": [
+                        "PassesPerStation",
+                        "AO10",
+                        "{{startdate1}}",
+                        "{{enddate}}"
+                    ]
+                },
+                "description": "Επιστρέφεται λίστα με την ανάλυση των διελεύσεων (Passes) για τον σταθμό διοδίων και για την  \nπερίοδο που δίνονται στο URL. Η παράσταση ημερομηνιών που επιστρέφονται πρέπει να είναι της  \nμορφής \"YYYY-MM-DD HH:MM:SS\""
+            },
+            "response": []
+        }
+    ],
+    "variable": [
+        {
+            "id": "f1ab9db7-ba3c-4aa1-8c57-f29bb2a19a86",
+            "key": "BaseURL",
+            "value": "http://localhost:8000/interoperability/api",
+            "type": "any"
+        },
+        {
+            "id": "3a5257fb-130a-4797-b176-f8fa42901a46",
+            "key": "startdate1",
+            "value": "20200101",
+            "type": "any"
+        },
+        {
+            "id": "ba1f87c2-4caf-4477-a8ee-299fe8393cb1",
+            "key": "enddate",
+            "value": "20201031",
+            "type": "any"
+        },
+        {
+            "id": "bf751dc3-ba9c-4bce-bd85-6c14a57e9cde",
+            "key": "baseUrl",
+            "value": "localhost:9103",
+            "type": "string"
+        }
+    ]
+}
